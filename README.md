@@ -11,7 +11,7 @@ char *req = "GET /index.html HTTP/1.1\r\nHost: "
     
 http_req *parsed = http_req_parse(req);
 
-if(parsed->method = GET){
+if(parsed->method == GET){
   // Handle
 }
 ```
