@@ -8,6 +8,7 @@
 #define TARGET_BUFFER_SIZE 64
 #define HTTP_HEADER_KEY_SIZE 16
 #define HTTP_HEADER_VALUE_SIZE 64
+#define HTTP_HEADER_LINE_LEN 128
 
 // HTTP method
 enum HTTP_METHOD {
@@ -44,7 +45,8 @@ typedef struct http_req {
   enum HTTP_METHOD method;
   http_version * version;
   char target[TARGET_BUFFER_SIZE];
-  http_header **headers;
+  http_header * headers;
+  char * body;
 } http_req;
 
 
